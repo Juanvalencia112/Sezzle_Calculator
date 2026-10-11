@@ -74,14 +74,6 @@ export default function Calculator() {
   return (
     <div className="calculator">
       {error && <div className="error">{error}</div>}
-      
-      
-      <div className="expand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="7 13 12 8 17 13"></polyline>
-          <polyline points="7 17 12 12 17 17"></polyline>
-        </svg>
-      </div>
 
       <div className="display">{display}</div>
       
@@ -109,7 +101,6 @@ export default function Calculator() {
         <button className="number" onClick={() => handleNum('0')}>0</button>
         <button className="number" onClick={() => handleNum('.')}>.</button>
         <button className="number" onClick={handleBackspace}>
-       
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginTop: '4px'}}>
             <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
             <line x1="18" y1="9" x2="12" y2="15"></line>

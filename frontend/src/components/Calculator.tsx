@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { calculate } from '../api/calculator';
 
 export default function Calculator() {
@@ -10,11 +10,16 @@ export default function Calculator() {
 
   const handleNum = (num: string) => {
     setError(null);
+    
     if (waitingForNew) {
-      setDisplay(num);
+      
+      setDisplay(num === '.' ? '0.' : num);
       setWaitingForNew(false);
     } else {
-      setDisplay(display === '0' ? num : display + num);
+     
+      if (num === '.' && display.includes('.')) return;
+      
+      setDisplay(display === '0' && num !== '.' ? num : display + num);
     }
   };
 
@@ -70,6 +75,27 @@ export default function Calculator() {
       setDisplay(display.slice(0, -1));
     }
   };
+
+ 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      
+      if (/^[0-9.]$/.test(event.key)) {
+        handleNum(event.key);
+      }
+     
+      if (event.key === 'Backspace') {
+        handleBackspace();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [display, waitingForNew]); 
 
   return (
     <div className="calculator">

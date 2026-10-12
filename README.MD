@@ -120,6 +120,20 @@ cd backend
 go test -v
 ```
 
+## AI Assistance Disclosure
+
+I utilized **Google Gemini** as an AI pair-programming assistant during this project. I use AI to accelerate boilerplate generation, optimize configuration files, and refine UI behaviors.
+
+**Key areas where AI was leveraged:**
+* **DevOps & Containerization:** Generating the initial multi-stage `Dockerfile` syntax for Nginx and Go, and resolving a Go versioning mismatch during the build process.
+* **UI/UX Implementation:** Translating the native UI design of the Xiaomi Redmi Note 12S calculator into CSS properties (matching the exact pastel color palette and circular button layouts) and implementing a clean, native Flexbox horizontal scroll for overflowing large numbers.
+* **Event Handling:** Quickly structuring the `useEffect` hook to bind native physical keyboard events (numbers and Backspace) without memory leaks.
+
+**Examples of Strategic Prompts Used:**
+* *"What is the most idiomatic way to structure Table-Driven unit tests for a mathematical service in Go?"*
+* *"Generate a robust Docker multi-stage build configuration to serve a Vite React app with Nginx, alongside a lightweight Go API."*
+* *"How can I replicate the specific visual design of the Xiaomi Redmi Note 12S native calculator app in React, focusing on exact hex colors and border-radius for circular buttons?"*
+
 
 ## Features
 

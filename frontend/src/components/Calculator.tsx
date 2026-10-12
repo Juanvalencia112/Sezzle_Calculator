@@ -101,7 +101,7 @@ export default function Calculator() {
     <div className="calculator">
       {error && <div className="error">{error}</div>}
 
-      <div className="display">{display}</div>
+      <div className="display"><span>{display}</span></div>
       
       <div className="keypad">
         <button className="top-action" onClick={clear}>AC</button>
